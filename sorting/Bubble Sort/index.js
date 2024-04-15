@@ -12,10 +12,11 @@ step3-------
 */
 
 const bubbleSort = (nums) => {
-  for (let i = 0; i < nums.length - 1; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-      if (nums[i] > nums[j]) {
-        [nums[i], nums[j]] = [nums[j], nums[i]];
+  const n = nums.length;
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n - i - 1; j++) {
+      if (nums[j] > nums[j + 1]) {
+        [nums[j], nums[j + 1]] = [nums[j + 1], nums[j]];
       }
     }
   }
@@ -23,3 +24,6 @@ const bubbleSort = (nums) => {
 };
 
 console.log(bubbleSort([3, 2, 4, 1, 6, 5]));
+
+//Time complexity is O(2n) -> O(n)
+// Space complexity is O(1)
